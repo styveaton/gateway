@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: srv-gateway-deployment
+spec:
+  selector:
+    matchLabels:
+      app: srv-gateway
+  replicas: 2 # Adjust the number of replicas as needed
+  template:
+    metadata:
+      labels:
+        app: srv-gateway
+    spec:
+      containers:
+      - name: srv-gateway
+        image: walletmoney/srv-gateway-image:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8070
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: srv-gateway-service
+spec:
+  selector:
+    app: srv-gateway
+  ports:
+  - protocol: "TCP"
+    port: 8070
+    targetPort: 8070
+  type: LoadBalancer
