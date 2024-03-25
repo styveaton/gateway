@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: srv-gateway
-        image: walletmoney/srv-gateway-image:latest
+        image: aton85/srv-gateway-image:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8070
