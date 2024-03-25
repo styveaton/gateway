@@ -110,8 +110,6 @@
 			</snapshots>
 		</repository>
 	</repositories>
-</plugins>
-	</build>
 
 	<distributionManagement>
         <repository>
