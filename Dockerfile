@@ -1,5 +1,5 @@
 
-ROM openjdk:17-jdk-slim-buster
+FROM openjdk:17-jdk-slim-buster
 ENV TZ=America/New_York
 WORKDIR /app
 
